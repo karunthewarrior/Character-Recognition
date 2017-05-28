@@ -1,0 +1,12 @@
+load('theta.mat');
+img=imread('img1.jpg');
+img=rgb2gray(img);
+img=im2double(img);
+img=img(:);
+img=img';
+img=[1 img];
+img=img';
+p=sigmoid(all_theta*img);
+[m,i]=max(p);
+display(p);
+fprintf(strcat('The number is most likely: ',int2str(i))); 
